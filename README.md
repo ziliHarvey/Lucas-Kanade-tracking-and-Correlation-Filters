@@ -1,5 +1,5 @@
 # Lucas-Kanade-tracking-and-Correlation-Filters
-CMU 16720 Computer Vision Project, containing implementation of several feature tracking algorithms based on Lucas Kanade algorithms. Please unzip data.zip and then follow the instructions below.
+This repository contains implementation of several feature tracking algorithms based on Lucas Kanade algorithms. Please unzip data.zip and then follow the instructions below.
 ## Lucas Kanade Tracking with one single template  
 The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf)   
 **Files included:**     
