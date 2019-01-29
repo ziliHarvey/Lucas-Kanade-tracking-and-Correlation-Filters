@@ -67,7 +67,7 @@ python testAerialSequence.py
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_dorminant_affine_motion/Figure_4.png" width=30% height=30%>
 ## Correlation Filters  
 The paper of correlation filters can be found here[Visual Object Tracking using Adaptive Correlation Filters](http://www.cs.colostate.edu/~vision/publications/bolme_cvpr10.pdf)  
-**Files included**  
+**Files included**   
 /src/Corr-Filters/lena.npy  
 /src/Corr-FIlters/example.py  
 **Run**  
