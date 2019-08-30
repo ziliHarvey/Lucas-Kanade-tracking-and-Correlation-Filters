@@ -1,5 +1,6 @@
 # Lucas-Kanade-tracking-and-Correlation-Filters
-This repository contains implementation of **sparse optical flow algorithm** proposed by Lucas and Kanade. LK Sparse Optical Flow can be used for motion estimation and object tracking. A more comprehensive implementation can be found on OpenCV [cv2.calcOpticalFlowPyrLK()](https://docs.opencv.org/3.4/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323).Please unzip data.zip and then follow the instructions below.
+This repository contains implementation of **Lucas-Kanade algorithm** proposed by Lucas and Kanade. Lucas-Kanade algorithm can be used for **sparse optical flow** (associate feature points across frames) and **tracking** (associate image patch cross frames). This repo implements the algorithm for tracking a single template across 400 frames video.   
+Please unzip data.zip and then follow the instructions below.
 ## Lucas Kanade Tracking with one single template  
 The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf)   
 **Files included:**     
