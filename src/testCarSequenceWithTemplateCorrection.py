@@ -44,11 +44,11 @@ for i in range(frames.shape[2]-1):
         bbox0 = patches.Rectangle((int(rectList0[i,0]), int(rectList0[i,1])), length, width,
                                  fill=False, edgecolor='red', linewidth=2)
         plt.gca().add_patch(bbox0)
-        plt.show()
         bbox1 = patches.Rectangle((int(rect[0]), int(rect[1])), length, width,
                                  fill=False, edgecolor='blue', linewidth=2)
         plt.gca().add_patch(bbox1)
         plt.title('frame %d'%num)
+        plt.show()
 
 np.save('carseqrects-wcrt.npy',rectList_new)
 
