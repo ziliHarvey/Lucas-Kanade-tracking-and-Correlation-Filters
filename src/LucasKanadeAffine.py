@@ -11,7 +11,7 @@ def LucasKanadeAffine(It, It1):
 	#	M: the Affine warp matrix [2x3 numpy array]
     # put your implementation here
     M = np.array([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]])
-    threshold = 1
+    threshold = 5
     dp = 10
     p = np.zeros(6)
     Iy, Ix = np.gradient(It1)
@@ -24,7 +24,7 @@ def LucasKanadeAffine(It, It1):
         x1_w = W[0,0] * x1 + W[0,1] * y1 + W[0,2]
         y1_w = W[1,0] * x1 + W[1,1] * y1 + W[1,2]
         x2_w = W[0,0] * x2 + W[0,1] * y2 + W[0,2]
-        y2_w = W[0,0] * x2 + W[0,1] * y2 + W[0,2]
+        y2_w = W[1,0] * x2 + W[1,1] * y2 + W[1,2]
         
         x = np.arange(0, It.shape[0], 1)
         y = np.arange(0, It.shape[1], 1)
