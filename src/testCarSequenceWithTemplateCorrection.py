@@ -18,8 +18,6 @@ rectList = []
 rectList_new = []
   
 for i in range(frames.shape[2]-1):
-#    plt.imshow(frames[:,:,i],cmap='gray')
-#    plt.pause(0.001)
     a = rect.copy()
     rectList.append(a)
     It = frames[:,:,i]

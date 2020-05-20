@@ -11,35 +11,40 @@ def LucasKanade(It, It1, rect, p0 = np.zeros(2)):
 	#	p0: Initial movement vector [dp_x0, dp_y0]
 	# Output:
 	#	p: movement vector [dp_x, dp_y]
+    #   o____x
+    #   |
+    #   |
+    #   y image(y, x) opencv convention
 	
-    # Put your implementation here
     
     threshold = 0.1
     x1, y1, x2, y2 = rect[0], rect[1], rect[2], rect[3]
     Iy, Ix = np.gradient(It1)
-    dp = 1
+    rows_img, cols_img = It.shape
+    rows_rect, cols_rect = x2 - x1, y2 - y1
+    dp = [[cols_img], [rows_img]] #just an intial value to enforce the loop
+
     while np.square(dp).sum() > threshold:
+            
+        # warp image using translation motion model
+
+        x1_w, y1_w, x2_w, y2_w = x1+p0[0], y1+p0[1], x2+p0[0], y2+p0[1]
         
+        y = np.arange(0, rows_img, 1)
+        x = np.arange(0, cols_img, 1)
         
-        #warp image
-        px, py = p0[0], p0[1]
-        x1_w, y1_w, x2_w, y2_w = x1+px, y1+py, x2+px, y2+py
-        
-        x = np.arange(0, It.shape[0], 1)
-        y = np.arange(0, It.shape[1], 1)
-        
-        c = np.linspace(x1, x2, 87)
-        r = np.linspace(y1, y2, 36)
+        c = np.linspace(x1, x2, cols_rect)
+        r = np.linspace(y1, y2, rows_rect)
         cc, rr = np.meshgrid(c, r)
     
-        cw = np.linspace(x1_w, x2_w, 87)
-        rw = np.linspace(y1_w, y2_w, 36)
+        cw = np.linspace(x1_w, x2_w, cols_rect)
+        rw = np.linspace(y1_w, y2_w, rows_rect)
         ccw, rrw = np.meshgrid(cw, rw)
-        
-        spline = RectBivariateSpline(x, y, It)
+
+        spline = RectBivariateSpline(y, x, It)
         T = spline.ev(rr, cc)
         
-        spline1 = RectBivariateSpline(x, y, It1)
+        spline1 = RectBivariateSpline(y, x, It1)
         warpImg = spline1.ev(rrw, ccw)
         
         #compute error image
@@ -47,10 +52,10 @@ def LucasKanade(It, It1, rect, p0 = np.zeros(2)):
         errImg = err.reshape(-1,1) 
         
         #compute gradient
-        spline_gx = RectBivariateSpline(x, y, Ix)
+        spline_gx = RectBivariateSpline(y, x, Ix)
         Ix_w = spline_gx.ev(rrw, ccw)
 
-        spline_gy = RectBivariateSpline(x, y, Iy)
+        spline_gy = RectBivariateSpline(y, x, Iy)
         Iy_w = spline_gy.ev(rrw, ccw)
         #I is (n,2)
         I = np.vstack((Ix_w.ravel(),Iy_w.ravel())).T
