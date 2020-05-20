@@ -63,9 +63,8 @@ This algorithm works on non-stationary camera video
 python testAerialSequence.py
 ```
 **Sample results**  
-<img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_dorminant_affine_motion/Figure_1.png" width=30% height=30%>
-<img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_dorminant_affine_motion/Figure_3.png" width=30% height=30%>
-<img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_dorminant_affine_motion/Figure_4.png" width=30% height=30%>
+<img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_dorminant_affine_motion/output.gif" width=50% height=50%>
+
 ## Correlation Filters  
 The paper of correlation filters can be found here[Visual Object Tracking using Adaptive Correlation Filters](http://www.cs.colostate.edu/~vision/publications/bolme_cvpr10.pdf)  
 **Files included**   
