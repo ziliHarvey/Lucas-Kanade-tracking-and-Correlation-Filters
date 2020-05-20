@@ -26,8 +26,4 @@ def SubtractDominantMotion(image1, image2):
     diff = np.abs(image1 - image2_w)
     threshold = 0.75
     mask = (diff > threshold)
-    
-    
-    
-    
     return mask
