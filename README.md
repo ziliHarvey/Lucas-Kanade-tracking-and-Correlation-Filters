@@ -17,7 +17,8 @@ python testCarSequence.py
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_one_single_template/Figure_3.png" width=30% height=30%>  
 /src/carseqrects.npy stores the vertices coordinates of bounding box in each frame.  
 ## Lucas Kanade Tracking with template correction  
-The upgraded version of the first algorithm, which mitigates template drifting problem. Detailed derivation can be referred to [The Template Update Problem](https://www.ri.cmu.edu/publications/the-template-update-problem/). This tracker runs around 18 Hz on my local machine.   
+The upgraded version of the first algorithm, which mitigates template drifting problem. The template can be updated every frame, but it must be re-aligned to the original
+template to remove drift. Detailed derivation can be referred to [The Template Update Problem](https://www.ri.cmu.edu/publications/the-template-update-problem/). This tracker runs around 18 Hz on my local machine.   
 **FIles included:**  
 /data/carseq.npy  
 /src/LucasKanade.py  
