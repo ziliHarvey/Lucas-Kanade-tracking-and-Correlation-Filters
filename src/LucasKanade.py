@@ -1,7 +1,6 @@
 import numpy as np
 from scipy.interpolate import RectBivariateSpline
 
-
 def LucasKanade(It, It1, rect, p0 = np.zeros(2)):
 	# Input: 
 	#	It: template image
