@@ -52,7 +52,7 @@ Blue bbox: with appearance bases | Red bbox: without appearance bases
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_appearance_basis/Figure_3.png" width=30% height=30%>
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_appearance_basis/Figure_5.png" width=30% height=30%>
 ## Lucas Kanade Tracking with dominant affine motion  
-This algorithm works on non-stationary camera video  
+This algorithm works on non-stationary camera video. This tracker runs around 23 Hz on my local machine.  
 **Files included**  
 /data/aerialseq.npy  
 /src/LucasKanadeAffine.py  
