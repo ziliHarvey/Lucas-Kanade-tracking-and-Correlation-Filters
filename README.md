@@ -34,7 +34,7 @@ Blue bbox: with template correction | Red bbox: without template correction
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_template_correction/Figure_2.png" width=30% height=30%>
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_template_correction/Figure_3.png" width=30% height=30%>
 ## Lucas Kanade Tracking with appearance basis  
-The former 2 algorithms may not suffice for real life challenges with drastic appearance variance. Through analyzing historical data collected, we can use an eigen-space approach to produce a principal template at each frame.  
+The former 2 algorithms may not suffice for real life challenges with drastic appearance variance. Through analyzing historical data collected, we can use an eigen-space approach to produce a principal template at each frame. This tracker runs around 38 Hz on my local machine.
 **Files included:**  
 /data/sylvseq.npy  
 /data/sylvbbases.npy  
