@@ -2,7 +2,7 @@
 This repository contains implementation of **Lucas-Kanade algorithm** proposed by Lucas and Kanade. Lucas-Kanade algorithm can be used for **sparse optical flow** (associate feature points across frames) and **tracking** (associate image patch cross frames). This repo implements the algorithm for tracking a single template across 400 frames video.   
 Please unzip data.zip and then follow the instructions below.
 ## Lucas Kanade Tracking with one single template  
-The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf)   
+The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf). This tracker runs around 30 Hz on my local machine.    
 **Files included:**     
 /data/carseq.npy  
 /src/LucasKanade.py  
@@ -17,7 +17,7 @@ python testCarSequence.py
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_one_single_template/Figure_3.png" width=30% height=30%>  
 /src/carseqrects.npy stores the vertices coordinates of bounding box in each frame.  
 ## Lucas Kanade Tracking with template correction  
-The upgraded version of the first algorithm, which mitigates template drifting problem. Detailed derivation can be referred to [The Template Update Problem](https://www.ri.cmu.edu/publications/the-template-update-problem/)  
+The upgraded version of the first algorithm, which mitigates template drifting problem. Detailed derivation can be referred to [The Template Update Problem](https://www.ri.cmu.edu/publications/the-template-update-problem/). This tracker runs around 18 Hz on my local machine.   
 **FIles included:**  
 /data/carseq.npy  
 /src/LucasKanade.py  
