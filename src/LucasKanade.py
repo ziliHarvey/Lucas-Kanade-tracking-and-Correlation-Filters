@@ -33,6 +33,7 @@ def LucasKanade(It, It1, rect, p0 = np.zeros(2)):
     T = spline.ev(rr, cc)
     spline_gx = RectBivariateSpline(y, x, Ix)
     spline_gy = RectBivariateSpline(y, x, Iy)
+    spline1 = RectBivariateSpline(y, x, It1)
 
     # in translation model jacobian is not related to coordinates
     jac = np.array([[1,0],[0,1]])
@@ -45,7 +46,7 @@ def LucasKanade(It, It1, rect, p0 = np.zeros(2)):
         cw = np.linspace(x1_w, x2_w, cols_rect)
         rw = np.linspace(y1_w, y2_w, rows_rect)
         ccw, rrw = np.meshgrid(cw, rw)
-        spline1 = RectBivariateSpline(y, x, It1)
+        
         warpImg = spline1.ev(rrw, ccw)
         
         #compute error image

@@ -11,7 +11,6 @@ def LucasKanadeBasis(It, It1, rect, bases, p0 = np.zeros(2)):
 	# Output:
 	#	p: movement vector [dp_x, dp_y]
 
-    # Put your implementation here
     threshold = 0.05
     x1, y1, x2, y2 = rect[0], rect[1], rect[2], rect[3]
     Iy, Ix = np.gradient(It1)
@@ -24,8 +23,6 @@ def LucasKanadeBasis(It, It1, rect, bases, p0 = np.zeros(2)):
     for i in range(num_bases):
         bases_sum += orthobases[:,i] @ orthobases[:,i].T
   
-    
-    
     # pre-computed
     rows_img, cols_img = It.shape
     rows_rect, cols_rect = x2 - x1, y2 - y1
@@ -42,6 +39,7 @@ def LucasKanadeBasis(It, It1, rect, bases, p0 = np.zeros(2)):
     T = spline.ev(rr, cc)
     spline_gx = RectBivariateSpline(y, x, Ix)
     spline_gy = RectBivariateSpline(y, x, Iy)
+    spline1 = RectBivariateSpline(y, x, It1)
 
     #evaluate jacobian (2,2)
     jac = np.array([[1,0],[0,1]])
@@ -55,7 +53,6 @@ def LucasKanadeBasis(It, It1, rect, bases, p0 = np.zeros(2)):
         cw = np.linspace(x1_w, x2_w, cols_rect)
         rw = np.linspace(y1_w, y2_w, rows_rect)
         ccw, rrw = np.meshgrid(cw, rw)
-        spline1 = RectBivariateSpline(y, x, It1)
         warpImg = spline1.ev(rrw, ccw)
         
         #compute error image
@@ -82,4 +79,5 @@ def LucasKanadeBasis(It, It1, rect, bases, p0 = np.zeros(2)):
         #update parameters
         p0[0] += dp[0,0]
         p0[1] += dp[1,0]
+
     return p0  
