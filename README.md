@@ -2,7 +2,7 @@
 This repository contains implementation of **Lucas-Kanade algorithm** proposed by Lucas and Kanade. Lucas-Kanade algorithm can be used for **sparse optical flow** (associate feature points across frames) and **tracking** (associate image patch cross frames). This repo implements the algorithm for tracking a single template across 400 frames video.   
 Please unzip data.zip and then follow the instructions below.
 ## Lucas Kanade Tracking with one single template  
-The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf). This tracker runs around 30 Hz on my local machine.    
+The "vanilla" algorithm for tracking. Detailed derivation can be referred to [Lucas-Kanade 20 Years On: A Unifying Framework](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2002_3/baker_simon_2002_3.pdf). This tracker runs around 36 Hz on my local machine.    
 **Files included:**     
 /data/carseq.npy  
 /src/LucasKanade.py  
@@ -34,7 +34,7 @@ Blue bbox: with template correction | Red bbox: without template correction
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_template_correction/Figure_2.png" width=30% height=30%>
 <img src="https://github.com/ziliHarvey/Lucas-Kanade-tracking-and-Correlation-Filters/raw/master/result/tracking_with_template_correction/Figure_3.png" width=30% height=30%>
 ## Lucas Kanade Tracking with appearance basis  
-The former 2 algorithms may not suffice for real life challenges with drastic appearance variance. Through analyzing historical data collected, we can use an eigen-space approach to produce a principal template at each frame. This tracker runs around 38 Hz on my local machine.  
+The former 2 algorithms may not suffice for real life challenges with drastic appearance variance. Through analyzing historical data collected, we can use an eigen-space approach to produce a principal template at each frame. This tracker runs around 39 Hz on my local machine.  
 **Files included:**  
 /data/sylvseq.npy  
 /data/sylvbbases.npy  
